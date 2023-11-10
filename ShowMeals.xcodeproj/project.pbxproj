@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		346FCB722AFD806F00E37ABA /* ShowMealsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346FCB712AFD806F00E37ABA /* ShowMealsApp.swift */; };
-		346FCB742AFD806F00E37ABA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346FCB732AFD806F00E37ABA /* ContentView.swift */; };
 		346FCB762AFD807400E37ABA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 346FCB752AFD807400E37ABA /* Assets.xcassets */; };
 		346FCB792AFD807400E37ABA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 346FCB782AFD807400E37ABA /* Preview Assets.xcassets */; };
 		346FCB832AFD807400E37ABA /* ShowMealsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346FCB822AFD807400E37ABA /* ShowMealsTests.swift */; };
@@ -16,6 +15,7 @@
 		346FCB8F2AFD807400E37ABA /* ShowMealsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346FCB8E2AFD807400E37ABA /* ShowMealsUITestsLaunchTests.swift */; };
 		346FCB9E2AFD816100E37ABA /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346FCB9D2AFD816100E37ABA /* Model.swift */; };
 		346FCBA02AFD8BA000E37ABA /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346FCB9F2AFD8BA000E37ABA /* Network.swift */; };
+		346FCBA72AFE8A3500E37ABA /* Meals in Resources */ = {isa = PBXBuildFile; fileRef = 346FCBA62AFE8A3500E37ABA /* Meals */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +38,6 @@
 /* Begin PBXFileReference section */
 		346FCB6E2AFD806F00E37ABA /* ShowMeals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShowMeals.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		346FCB712AFD806F00E37ABA /* ShowMealsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowMealsApp.swift; sourceTree = "<group>"; };
-		346FCB732AFD806F00E37ABA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		346FCB752AFD807400E37ABA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		346FCB782AFD807400E37ABA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		346FCB7E2AFD807400E37ABA /* ShowMealsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShowMealsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,6 +47,7 @@
 		346FCB8E2AFD807400E37ABA /* ShowMealsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowMealsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		346FCB9D2AFD816100E37ABA /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		346FCB9F2AFD8BA000E37ABA /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		346FCBA62AFE8A3500E37ABA /* Meals */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Meals; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,11 +98,11 @@
 		346FCB702AFD806F00E37ABA /* ShowMeals */ = {
 			isa = PBXGroup;
 			children = (
+				346FCBA62AFE8A3500E37ABA /* Meals */,
 				346FCBA12AFD8BD700E37ABA /* Constants */,
 				346FCB9C2AFD814F00E37ABA /* Models */,
 				346FCB9B2AFD812200E37ABA /* NetworkCall */,
 				346FCB712AFD806F00E37ABA /* ShowMealsApp.swift */,
-				346FCB732AFD806F00E37ABA /* ContentView.swift */,
 				346FCB752AFD807400E37ABA /* Assets.xcassets */,
 				346FCB772AFD807400E37ABA /* Preview Content */,
 			);
@@ -261,6 +261,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				346FCBA72AFE8A3500E37ABA /* Meals in Resources */,
 				346FCB792AFD807400E37ABA /* Preview Assets.xcassets in Resources */,
 				346FCB762AFD807400E37ABA /* Assets.xcassets in Resources */,
 			);
@@ -288,7 +289,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				346FCB9E2AFD816100E37ABA /* Model.swift in Sources */,
-				346FCB742AFD806F00E37ABA /* ContentView.swift in Sources */,
 				346FCBA02AFD8BA000E37ABA /* Network.swift in Sources */,
 				346FCB722AFD806F00E37ABA /* ShowMealsApp.swift in Sources */,
 			);
