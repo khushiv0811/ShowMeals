@@ -12,7 +12,7 @@ struct ShowMealsApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                MealsView()
+            MealsView()
             }
         }
     }
