@@ -12,21 +12,22 @@ enum NetworkFailure {
     case invalidURL
 }
 
-func fetchMeals() -> some Publisher<Meals, Error> {
+func fetchMeals() -> some Publisher<MealsResponse, Error> {
     let url = URL(string: "https://themealdb.com/api/json/v1/1/filter.php?c=Dessert")!
     return URLSession
         .shared
         .dataTaskPublisher(for: url)
         .map(\.data)
         .print()
-        .decode(type: Meals.self, decoder: jsonDecoder)
+        .decode(type: MealsResponse.self, decoder: jsonDecoder)
 }
 
-func fetchMealDetails(meal: Meal) -> some Publisher<MealDetail, Error> {
+func fetchMealDetails(meal: Meal) -> some Publisher<MealDetailResponse, Error> {
     let url = URL(string: "https://themealdb.com/api/json/v1/1/lookup.php?i=\(meal.id)")!
     return URLSession
         .shared
         .dataTaskPublisher(for: url)
         .map(\.data)
-        .decode(type: MealDetail.self, decoder: jsonDecoder)
+        .print()
+        .decode(type: MealDetailResponse.self, decoder: jsonDecoder)
 }
