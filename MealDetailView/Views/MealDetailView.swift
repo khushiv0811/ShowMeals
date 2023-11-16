@@ -16,7 +16,7 @@ struct MealDetailView: View {
         NavigationView {
             ScrollView {
                 ForEach(viewModel.mealInfo, id: \.id) { mealinformation in
-                    VStack(alignment: .leading) {
+                    VStack {
                         MealImageView(meal: viewModel.meal)
                             .frame(width: 150, height: 150)
                             .cornerRadius(75)
