@@ -11,18 +11,23 @@ struct MealsView: View {
     @StateObject var viewModel = MealsViewModel()
     
     var body: some View {
-        NavigationView {
-            List(viewModel.mealList) { meal in
-                NavigationLink(destination: MealDetailView(meal: meal)) {
-                    MealCellView(meal: meal)
-                        .frame(maxWidth: .infinity, alignment: .leading)
+        VStack {
+            Text("Deserts")
+                .bold()
+                .font(.title)
+                .padding(.all, 15)
+            ScrollView {
+                VStack {
+                    ForEach(viewModel.mealList, id: \.id) { meal in
+                        NavigationLink(destination: MealDetailView(meal: meal)) {
+                            MealCellView(meal: meal)
+                                .foregroundColor(.black)
+                        }
+                    }
                 }
             }
-            .listStyle(.plain)
-            .foregroundColor(.black)
-            .scrollContentBackground(.hidden)
-            .navigationTitle("Deserts")
         }
+        .padding(.horizontal, 12)
         .onAppear {
             viewModel.fetchInitialData()
         }
