@@ -14,7 +14,6 @@ final class MealsViewModel: ObservableObject {
     func fetchInitialData()
     {   fetchMeals()
         .map(\.meals)
-        .print()
         .receive(on: DispatchQueue.main)
         .replaceError(with: [])
         .assign(to: &$mealList)

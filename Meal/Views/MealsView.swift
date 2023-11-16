@@ -13,7 +13,7 @@ struct MealsView: View {
     var body: some View {
         NavigationView {
             List(viewModel.mealList) { meal in
-                NavigationLink(destination: MealDetailView()) {
+                NavigationLink(destination: MealDetailView(meal: meal)) {
                     MealCellView(meal: meal)
                         .frame(maxWidth: .infinity, alignment: .leading)
                 }
