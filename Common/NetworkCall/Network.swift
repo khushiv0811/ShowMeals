@@ -18,7 +18,7 @@ func fetchMeals() -> some Publisher<MealsResponse, Error> {
         .shared
         .dataTaskPublisher(for: url)
         .map(\.data)
-        .print()
+
         .decode(type: MealsResponse.self, decoder: jsonDecoder)
 }
 
@@ -28,6 +28,5 @@ func fetchMealDetails(meal: Meal) -> some Publisher<MealDetailResponse, Error> {
         .shared
         .dataTaskPublisher(for: url)
         .map(\.data)
-        .print()
         .decode(type: MealDetailResponse.self, decoder: jsonDecoder)
 }

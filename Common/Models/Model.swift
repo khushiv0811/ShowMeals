@@ -32,7 +32,7 @@ struct MealsResponse: Decodable {
 }
 
 struct MealDetail: Decodable, Identifiable, Hashable {
-    let id = UUID()
+    var id: String
     let name: String?
     let category: String?
     let instructions: String?
@@ -64,6 +64,7 @@ extension MealDetail {
             index += 1
         }//: while
             self.ingredients = ingredients
+            id = mealDict["idMeal"] as? String ?? ""
             name = mealDict["strMeal"] as? String ?? ""
             category = mealDict["strCategory"] as? String ?? ""
             instructions = mealDict["strInstructions"] as? String ?? ""
@@ -78,7 +79,7 @@ struct MealDetailResponse: Decodable {
 }
 
 extension MealDetail {
-    static let mealTest = MealDetail(name: "Apam balik", category: "Dessert", instructions: "Mix milk, oil and egg together. Sift flour, baking powder and salt into the mixture. Stir well until all ingredients are combined evenly.\r\n\r\nSpread some batter onto the pan. Spread a thin layer of batter to the side of the pan. Cover the pan for 30-60 seconds until small air bubbles appear.\r\n\r\nAdd butter, cream corn, crushed peanuts and sugar onto the pancake. Fold the pancake into half once the bottom surface is browned.\r\n\r\nCut into wedges and best eaten when it is warm.", thumbnail:  "https://www.themealdb.com/images/media/meals/adxcbq1619787919.jpg", tags: nil, youtube: "https://www.youtube.com/watch?v=6R8ffRRJcrg", ingredients: MealDetail.ingredientTest )
+    static let mealTest = MealDetail(id: "", name: "Apam balik", category: "Dessert", instructions: "Mix milk, oil and egg together. Sift flour, baking powder and salt into the mixture. Stir well until all ingredients are combined evenly.\r\n\r\nSpread some batter onto the pan. Spread a thin layer of batter to the side of the pan. Cover the pan for 30-60 seconds until small air bubbles appear.\r\n\r\nAdd butter, cream corn, crushed peanuts and sugar onto the pancake. Fold the pancake into half once the bottom surface is browned.\r\n\r\nCut into wedges and best eaten when it is warm.", thumbnail:  "https://www.themealdb.com/images/media/meals/adxcbq1619787919.jpg", tags: nil, youtube: "https://www.youtube.com/watch?v=6R8ffRRJcrg", ingredients: MealDetail.ingredientTest )
 }
 
 extension MealDetail {
