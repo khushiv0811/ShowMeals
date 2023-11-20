@@ -17,7 +17,7 @@ final class MealDetailViewModel: ObservableObject {
     }
     
     func fetchInitialData() {
-        fetchMealDetails(meal: meal)
+        Networkcall().fetchMealDetails(meal: meal)
             .map(\.meals)
             .print()
             .receive(on: DispatchQueue.main)

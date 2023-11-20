@@ -11,23 +11,24 @@ import Combine
 enum NetworkFailure {
     case invalidURL
 }
+class Networkcall {
+    func fetchMeals() -> some Publisher<MealsResponse, Error> {
+        let url = URL(string: "https://themealdb.com/api/json/v1/1/filter.php?c=Dessert")!
+        return URLSession
+            .shared
+            .dataTaskPublisher(for: url)
+            .map(\.data)
 
-func fetchMeals() -> some Publisher<MealsResponse, Error> {
-    let url = URL(string: "https://themealdb.com/api/json/v1/1/filter.php?c=Dessert")!
-    return URLSession
-        .shared
-        .dataTaskPublisher(for: url)
-        .map(\.data)
-        .print()
-        .decode(type: MealsResponse.self, decoder: jsonDecoder)
+
+    func fetchMealDetails(meal: Meal) -> some Publisher<MealDetailResponse, Error> {
+        let url = URL(string: "https://themealdb.com/api/json/v1/1/lookup.php?i=\(meal.id)")!
+        return URLSession
+            .shared
+            .dataTaskPublisher(for: url)
+            .map(\.data)
+            .decode(type: MealDetailResponse.self, decoder: jsonDecoder)
+    }
+    
 }
 
-func fetchMealDetails(meal: Meal) -> some Publisher<MealDetailResponse, Error> {
-    let url = URL(string: "https://themealdb.com/api/json/v1/1/lookup.php?i=\(meal.id)")!
-    return URLSession
-        .shared
-        .dataTaskPublisher(for: url)
-        .map(\.data)
-        .print()
-        .decode(type: MealDetailResponse.self, decoder: jsonDecoder)
-}
+

@@ -12,7 +12,7 @@ final class MealsViewModel: ObservableObject {
     @Published var mealList: [Meal] = []
     
     func fetchInitialData()
-    {   fetchMeals()
+    {   Networkcall().fetchMeals()
         .map(\.meals)
         .receive(on: DispatchQueue.main)
         .replaceError(with: [])
