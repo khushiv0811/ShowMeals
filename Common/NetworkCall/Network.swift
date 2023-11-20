@@ -18,8 +18,10 @@ class Networkcall {
             .shared
             .dataTaskPublisher(for: url)
             .map(\.data)
-
-
+        
+            .decode(type: MealsResponse.self, decoder: jsonDecoder)
+    }
+    
     func fetchMealDetails(meal: Meal) -> some Publisher<MealDetailResponse, Error> {
         let url = URL(string: "https://themealdb.com/api/json/v1/1/lookup.php?i=\(meal.id)")!
         return URLSession
@@ -28,7 +30,4 @@ class Networkcall {
             .map(\.data)
             .decode(type: MealDetailResponse.self, decoder: jsonDecoder)
     }
-    
 }
-
-
