@@ -17,7 +17,7 @@ struct MealsView: View {
                 .font(.title)
                 .padding(.all, 15)
             ScrollView {
-                VStack {
+                LazyVStack {
                     ForEach(viewModel.mealList, id: \.id) { meal in
                         NavigationLink(destination: MealDetailView(meal: meal)) {
                             MealCellView(meal: meal)
